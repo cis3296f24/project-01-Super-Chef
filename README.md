@@ -17,10 +17,11 @@ https://test2-sigma-six.vercel.app/
 2) We recommend Webstorm as the IDE, but anything that can be used to sufficiently develop Web Apps is also fine. As
 long as you can clone this repo. Do that by going to the home page of this repo and hitting the green "<>Code"
 button. Use that url to clone the repo into whatever IDE you chose.
-3) Aftert that you need to install the dependencies needed. So in your terminal navigate to the project directory if not already there and then enter "npm install". This should install everyting you need. And you are all set.
+3) Aftert that you need to install the dependencies needed. So in your terminal navigate to the project directory if not already there and then enter "npm install" and "npm install openai". This should install everyting you need. And you are all set.
 
 # How to run
-After following the steps above to install the project all you have to odo now in the same terminal is type "npm run dev" and that should sart the web page hosted locally. You can now visit http:localhost:3000/ and view the project
+Folow this link recieve the env variables. https://docs.google.com/document/d/1A6a753eqT-sxodhhDx1HjCmRMabo1XXi7pvmlZvqc0I/edit?tab=t.0
+After following the steps above to install the project all you have to odo now in the same terminal is type "npm run dev" and that should sart the web page hosted locally. You can now visit http:localhost:3000/ and view the project. Once the project is veiwed, please make sure to create an account by pressing sign in in the top right corner. To use the functionality, you need to be signed in.
 
 # How to contribute
 Follow this project here to know the latest status: https://github.com/cis3296f24/project-01-Super-Chef

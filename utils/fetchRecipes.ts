@@ -3,8 +3,9 @@ export async function searchRecipes(ingredientInput = "", mealType = "", dietLab
     const edamamID = "e1a01707";
     const appKey = "11c9ef351bc78989bf4b9080c390c2e7";
 
-    const mealTypes = ["breakfast", "brunch", "lunch/dinner", "snack", "teatime"];
+    const mealTypes = ["breakfast", "brunch", "lunch","dinner", "snack", "teatime"];
     const randomMealType = mealType || mealTypes[Math.floor(Math.random() * mealTypes.length)];
+    console.log("Mealtype: %s", randomMealType);
     
     const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${encodeURIComponent(ingredientInput)}&app_id=${edamamID}&app_key=${appKey}${dietFormat(dietLabels)}${healthFormat(healthLabels)}&mealType=${encodeURIComponent(randomMealType)}`;
 

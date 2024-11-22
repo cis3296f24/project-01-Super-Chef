@@ -1,0 +1,111 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe4b5;
+    color: #333;
+    position: fixed;
+    top:0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 50px;
+  }
+
+.hamburger, .settingsButton {
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    color: #ff7f50;
+    font-weight: bold;
+}
+ 
+.dropdownMenu {
+    position: absolute;
+    top: 40px;
+    background-color: #fffaf0;
+    border: 2px solid #f0d9b5;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 150px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #ff683c;
+    font-family: 'Pacifico', cursive;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .welcomeMessage {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .dropdownMenu a {
+    padding: 8px 10px;
+    color: #ff7f50;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .dropdownMenu a:hover {
+    background-color: #f0d9b5;
+  }
+  
+
+  .leftSection {
+    position:"relative";
+    display:flex;
+    align-items: center;
+    margin-right: auto;
+    height: 100%;
+    padding-left: 1rem;
+  }
+  /* Right section containing the settings and auth buttons */
+  .rightSection {
+    padding-right: 1rem;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    height: 100%;
+  }
+  .button {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 4px 8px;
+    background-color: #ffe4b5;
+    outline: none;
+    border: none;
+    color: #ff7f50;;
+    border-radius: 7px;
+    font-weight: bold;
+    /* font-family: "Comic Sans MS", cursive; */
+    transition:
+        transform 0.1s ease-in-out,
+        box-shadow 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-0.5px) translateX(0.5px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}

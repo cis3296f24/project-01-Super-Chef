@@ -7,7 +7,7 @@ import {
 } from '@clerk/nextjs';
 import './globals.css';
 import styles from './styles.module.css';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (

@@ -1,4 +1,4 @@
-export const addRecipeToMealPlan = async (recipeId: any, recipeName: any, date: any, userId: any, image: any, source: any) => {
+export const addRecipeToMealPlan = async (recipeId:string, recipeName:string, date:Date, userId:string, image:string, source:string) => {
     const response = await fetch("/api/mealPlans", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

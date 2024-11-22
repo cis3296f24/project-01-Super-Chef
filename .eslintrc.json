@@ -1,12 +1,8 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript"
-  ],
+  "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off",  // Allow the use of 'any' type
+    "@typescript-eslint/no-explicit-any": "off", // Allow the use of 'any' type
     "@next/next/no-html-link-for-pages": "off",
-    "@typescript-eslint/no-unused-vars": "off"    // Ignore unused variable warnings
+    "@typescript-eslint/no-unused-vars": "off" // Ignore unused variable warnings
   }
 }
-

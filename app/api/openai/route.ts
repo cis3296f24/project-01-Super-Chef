@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function POST(req: Request, res: NextResponse) {
+export async function POST(req: Request) {
   const body = await req.json();
 
   const completion = await openai.chat.completions.create({
@@ -15,5 +15,5 @@ export async function POST(req: Request, res: NextResponse) {
   console.log(completion.choices[0].message);
   const theResponse = completion.choices[0].message;
 
-  return NextResponse.json({ output: theResponse }, { status: 200 });
+  return NextResponse.json( theResponse , { status: 200 });
 }

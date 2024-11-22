@@ -22,8 +22,6 @@ export async function POST(req: NextRequest) {
             isPrivate: isPrivate
         });
 
-        
-
         await newSavedRecipe.save();
         return NextResponse.json({ message: 'Recipe saved successfully!' });
     } catch (error) {

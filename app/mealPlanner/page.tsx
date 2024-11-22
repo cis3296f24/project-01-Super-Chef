@@ -1,9 +1,9 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import RecipeCard from "@/components/RecipeCard";
+import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import styles from "./mealPlanner.module.css";
 import MealPlan from "@/libs/models/mealPlan.model";
 import { Ingredients } from "@/types/RecipeResponseType"; // made it optional
@@ -22,7 +22,6 @@ interface MealPlan {
     ingredients: Ingredients[]; // Matches RecipeResult.ingredients
     isPrivate: boolean; // Matches RecipeResult.isPrivate
 }
-
 
 export default function MealPlanner() {
     const { user } = useUser();
@@ -50,11 +49,12 @@ export default function MealPlanner() {
         fetchMealPlans();
     }, [userId]);
 
-    const getMealsForDate = (date: Date) => {
+    const getMealsForDate = (date: Date | null) => {
         return mealPlans.filter(
-            (meal) => new Date(meal.date).toISOString().split("T")[0] === date.toISOString().split("T")[0]
+            meal =>
+                new Date(meal.date).toISOString().split("T")[0] ===
+                date?.toISOString().split("T")[0]
         );
-
     };
 
     return (
@@ -62,11 +62,11 @@ export default function MealPlanner() {
             <h1>Meal Planner</h1>
             <Calendar
                 value={selectedDate}
-                onChange={(value) => {
-                    if (value instanceof Date){
+                onChange={value => {
+                    if (value instanceof Date) {
                         setSelectedDate(value);
-                }else{
-                        console.warn('UnexpectedValue Type: ', value);
+                    } else {
+                        console.warn("UnexpectedValue Type: ", value);
                     }
                 }}
                 className={styles.customCalendar}
@@ -76,10 +76,12 @@ export default function MealPlanner() {
             <div
                 style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+                    gridTemplateColumns:
+                        "repeat(auto-fill, minmax(220px, 1fr))",
                     gap: "20px",
                     justifyContent: "center",
-                }}>
+                }}
+            >
                 {getMealsForDate(selectedDate).map((meal, index) => (
                     <RecipeCard
                         key={index}
@@ -98,8 +100,7 @@ export default function MealPlanner() {
                             ingredientLines: meal.ingredientLines,
                             isPrivate: meal.isPrivate,
                         }}
-                        //onAddToMealPlan={() => {}}
-                        onSave={() => {}}
+                        saveable
                     />
                 ))}
             </div>

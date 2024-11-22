@@ -1,0 +1,88 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #ffa07a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Comic Sans MS", cursive;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #f0d9b5;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    outline: none;
+    font-size: 1rem;
+}
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: scroll;
+}
+
+.modalContent {
+    background: floralwhite;
+    padding: 30px;
+    width: 270px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    margin-right: 12px;
+}
+
+.applyButton {
+    margin-top: 15px;
+    padding: 10px 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.applyButton:hover {
+    background-color: coral;
+}

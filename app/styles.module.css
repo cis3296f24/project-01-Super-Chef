@@ -2,432 +2,245 @@
 
 /* Container styling */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: calc(100vh - 30px);
+    font-family: Arial, sans-serif;
 }
 
 .recipes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
 .recipeCard {
-  background-color: #fffaf0;
-  border: 2px solid #f0d9b5;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease;
+    background-color: #fffaf0;
+    border: 2px solid #f0d9b5;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
 }
 
 .recipeCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .recipeCard img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
 .recipeCard img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .recipeCard h3 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  color: #333;
-  font-family: 'Comic Sans MS', cursive;
-  text-align: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
 }
 
 .recipeCard a {
-  text-decoration: none;
-  color: #ff7f50;
-  font-weight: bold;
-  transition: color 0.2s ease;
+    text-decoration: none;
+    color: #ff7f50;
+    font-weight: bold;
+    transition: color 0.2s ease;
 }
 
 .recipeCard a:hover {
-  color: #ff6347;
-  text-decoration: underline;
+    color: #ff6347;
+    text-decoration: underline;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffe4b5;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffe4b5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-/* Home button styling */
+/* Home button styling --------- can revert button to this behavior*/
 .homeButton {
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #ffa07a;
-  color: white;
-  border-radius: 15px;
-  font-family: 'Comic Sans MS', cursive;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #ffa07a;
+    color: white;
+    border-radius: 15px;
+    font-family: "Comic Sans MS", cursive;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
 .homeButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .authButtonContainer {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 .authButton {
-  padding: 8px 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #ff7f50;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7f50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .authButton:hover {
-  background-color: #ff6347;
+    background-color: #ff6347;
 }
 
 /* Writing animation keyframes */
 @keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 /* Search area styling */
-.search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 20px;
-}
 
 /* Input styling */
-.input {
-  flex: 1;
-  padding: 10px;
-  border: 2px solid #f0d9b5;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  outline: none;
-  font-size: 1rem;
-}
 
 /* Button styling */
-.button {
-  padding: 10px 20px;
-  background-color: #ffa07a;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Comic Sans MS', cursive;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-.button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .search .dropdownContent {
-  padding: 10px 20px;
-  background-color: #ffa07a;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Comic Sans MS', cursive;
-  display: inline-block;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+    padding: 10px 20px;
+    background-color: #ffa07a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Comic Sans MS", cursive;
+    display: inline-block;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .search .dropdownContent button {
-  padding: 10px 20px;
-  background-color: #ffa07a;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Comic Sans MS', cursive;
-  display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffa07a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Comic Sans MS", cursive;
+    display: inline-block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+    background-color: #ddd;
+}
 
-.active{
+.active {
     background-color: #f88457; /* Green highlight for active filters */
     color: white;
 }
 
 .card {
-  background-color: #ffe4b5;
-  padding: 20px;
-  border-radius: 50px;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-
+    background-color: #ffe4b5;
+    padding: 20px;
+    border-radius: 50px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
+
 .welcomeMessage {
-  font-size: 1.2rem;
-  color: #333;
-  font-family: 'Comic Sans MS', cursive;
-  font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
 }
 
 .superChefHeader {
-  font-size: 3.5rem;
-  font-family: 'Pacifico', cursive;
-  fill: #ff683c;
-  stroke: #333;
-  stroke-width: 2;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 3s ease forwards;
+    font-size: 3.5rem;
+    font-family: "Pacifico", cursive;
+    fill: #ff683c;
+    stroke: #333;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 3s ease forwards;
 }
 
-.saveButton{
-  padding:8px 16px;
-  background-color: #ffa07a;
-  color: white;
-  border:none;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; ;
+.saveButton {
+    padding: 8px 16px;
+    background-color: #ffa07a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .saveButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .profileImage {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    left: 20px;
 }
 
 /* Navbar Styling */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #ffe4b5;
-  color: #333;
-  font-family: 'Comic Sans MS', cursive;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
-  color: #ff683c;
-  font-family: 'Pacifico', cursive;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.welcomeMessage {
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-}
-
-.hamburger, .settingsButton {
-  font-size: 1rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 10px 15px;
-  color: #ff7f50;
-  font-weight: bold;
-}
 
 /* Dropdown Menu Styling */
-.dropdownMenu {
-  position: absolute;
-  top: 60px;
-  left: 20px;
-  background-color: #fffaf0;
-  border: 2px solid #f0d9b5;
-  border-radius: 8px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  width: 150px;
-}
-
-.dropdownMenu a {
-  padding: 8px 10px;
-  color: #ff7f50;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.dropdownMenu a:hover {
-  background-color: #f0d9b5;
-}
-
-
-.settingsDropdown {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fffaf0;
-  border: 2px solid #f0d9b5;
-  border-radius: 8px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  width: 150px;
-}
-
-.settingsDropdown a {
-  padding: 8px 10px;
-  color: #ff7f50;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-}
-
-.settingsDropdown a:hover {
-  background-color: #f0d9b5;
-}
-
-/* Right section containing the settings and auth buttons */
-.rightSection {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-}
-
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modalContent {
-  background: floralwhite;
-  padding: 30px;
-  width: 270px;
-  max-width: 100%;
-  text-align: center;
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-}
-
-.checkboxLabel input[type="checkbox"] {
-  margin-right: 12px;
-}
-
-.applyButton {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: orange;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.applyButton:hover {
-  background-color: coral;
-}

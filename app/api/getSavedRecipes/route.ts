@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
         await connect();
         const savedRecipes = await SavedRecipe.find({ userId });
         
-        return NextResponse.json(savedRecipes);
+        return NextResponse.json(savedRecipes, {status: 200});
     } catch (error) {
         console.error('Error retrieving saved recipes:', error);
         return NextResponse.json({ error: 'Failed to retrieve saved recipes' }, { status: 500 });
