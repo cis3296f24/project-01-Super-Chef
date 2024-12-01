@@ -29,13 +29,33 @@ const SavedRecipesPage = () => {
         fetchSavedRecipes();
     }, []);
 
+    const deleteSavedRecipe = async (id: string) => {
+        try {
+            const response = await fetch(`/api/getSavedRecipes?id=${id}`, { method: "DELETE" });
+            if (response.ok) {
+                setSavedRecipes(prev => prev.filter(recipe => recipe.link !== id));
+                alert("Recipe deleted successfully.");
+            } else {
+                alert("Failed to delete recipe.");
+            }
+        } catch (error) {
+            console.error("Error deleting recipe:", error);
+        }
+    };
+
+
+
+    useEffect(() => {
+        fetchSavedRecipes();
+    }, []);
+
     return (
         <div className={styles.container}>
             <h1>Your Saved Recipes</h1>
             <div className={styles.recipes}>
                 {savedRecipes.length > 0 ? (
                     savedRecipes.map((recipe, key) => (
-                        <RecipeCard key={key} recipe={recipe} planable />
+                        <RecipeCard key={key} recipe={recipe} planable deletable onDelete={deleteSavedRecipe}/>
                     ))
                 ) : (
                     <h2>No saved recipes found.</h2>

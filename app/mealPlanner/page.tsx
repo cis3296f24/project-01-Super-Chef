@@ -6,7 +6,9 @@ import "react-calendar/dist/Calendar.css";
 import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import styles from "./mealPlanner.module.css";
 import MealPlan from "@/libs/models/mealPlan.model";
-import { Ingredients } from "@/types/RecipeResponseType"; // made it optional
+import { Ingredients } from "@/types/RecipeResponseType";
+import { fetchMealPlans } from "@/utils/fetchMealPlans";
+import { number } from "prop-types"; // made it optional
 
 interface MealPlan {
     recipeId: string; // Corresponds to RecipeResult.uri
@@ -57,6 +59,28 @@ export default function MealPlanner() {
         );
     };
 
+    const deleteMealPlan = async (id: string) => {
+        try {
+            const response = await fetch(`/api/mealPlans?id=${id}`, { method: "DELETE" });
+            if (response.ok) {
+                setMealPlans(prev => prev.filter(meal => meal.recipeId !== id));
+                alert("Meal plan deleted successfully.");
+            } else {
+                alert("Failed to delete meal plan.");
+            }
+        } catch (error) {
+            console.error("Error deleting meal plan:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchMealPlans();
+    }, []);
+
+    const mealsForDate = mealPlans.filter(
+        meal => new Date(meal.date).toDateString() === selectedDate.toDateString()
+    );
+
     return (
         <div>
             <h1>Meal Planner</h1>
@@ -101,6 +125,8 @@ export default function MealPlanner() {
                             isPrivate: meal.isPrivate,
                         }}
                         saveable
+                        deletable
+                        onDelete={deleteMealPlan}
                     />
                 ))}
             </div>

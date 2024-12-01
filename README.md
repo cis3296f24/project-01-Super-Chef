@@ -9,7 +9,7 @@ Adding an screenshot or a mockup of your application in action would be nice.
 <img width="1470" alt="Screenshot 2024-10-31 at 4 46 45 PM" src="https://github.com/user-attachments/assets/6f02178a-916e-412c-a60d-84d56cd785b7">
 
 # Link to current website
-https://test2-sigma-six.vercel.app/
+https://project-01-super-chef-oqug.vercel.app/
 
 
 # How to install
@@ -21,6 +21,7 @@ button. Use that url to clone the repo into whatever IDE you chose.
 
 # How to run
 Folow this link recieve the env variables. https://docs.google.com/document/d/1A6a753eqT-sxodhhDx1HjCmRMabo1XXi7pvmlZvqc0I/edit?tab=t.0
+Follow this link to create your own env variables. https://docs.google.com/document/d/1aIgRhPLllihbn6UwsRuzs4is3P4e6N3jHxcY3R1OLqw/edit?tab=t.0
 After following the steps above to install the project all you have to odo now in the same terminal is type "npm run dev" and that should sart the web page hosted locally. You can now visit http:localhost:3000/ and view the project. Once the project is veiwed, please make sure to create an account by pressing sign in in the top right corner. To use the functionality, you need to be signed in.
 
 # How to contribute

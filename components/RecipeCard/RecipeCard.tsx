@@ -5,15 +5,20 @@ import styles from "@/app/styles.module.css";
 import { useUser } from "@clerk/nextjs";
 import { useCallback, useState } from "react";
 import Button from "../Button/Button";
+import { deleteRecipe } from "@/utils/deleteRecipe";
 
 const RecipeCard = ({
     recipe,
     saveable,
     planable,
+    deletable,
+    onDelete,
 }: {
     recipe: RecipeResult | Partial<RecipeResult>;
     saveable?: boolean;
     planable?: boolean;
+    deletable?: boolean;
+    onDelete?: (id: string) => void;
 }) => {
     const [showVideo, setShowVideo] = useState(false); //video visibility toggle
     const [videoId, setVideoId] = useState<string | null>(null); //youtube video id
@@ -21,6 +26,7 @@ const RecipeCard = ({
     const { user } = useUser();
     const router = useRouter();
     const recipeId = recipe.uri?.split("recipe_")[1];
+
     const viewRecipeDetails = () => {
         router.push(`/recipeDetails/${recipeId}`);
     };
@@ -107,6 +113,15 @@ const RecipeCard = ({
         []
     );
 
+    const handleDelete = () => {
+        if (recipe.link && onDelete) {
+            onDelete(recipe.link);
+        } else {
+            console.error("Recipe link is undefined or onDelete not provided");
+        }
+    };
+
+
     return (
         <div className={styles.recipeCard}>
             <img src={recipe.image} alt={recipe.label} />
@@ -126,6 +141,13 @@ const RecipeCard = ({
                     <Button
                         text={"Add to Meal Planner"}
                         onClick={() => addToMealPlan(recipe)}
+                    />
+                )}
+                {deletable && (
+                    <Button
+                        text="❌ Remove"
+                        onClick={handleDelete}
+                        style={{ backgroundColor: "red", color: "white" }}
                     />
                 )}
             </div>

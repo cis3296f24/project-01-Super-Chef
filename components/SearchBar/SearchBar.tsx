@@ -118,11 +118,20 @@ export default function Search({ onSubmitSearch }: SearchProps) {
         );
     };
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            onSubmitSearch(ingredients, Array.from(activeDiet), Array.from(activeHealth));
+        }
+    };
+
+
     return (
         <div className={styles.search}>
             <div style={{ width: "100%", display: "flex", gap: "10px" }}>
                 <input
                     onChange={e => setIngredients(e.target.value)}
+                    onKeyDown={handleKeyPress}//for enter
                     className={styles.input}
                     type="text"
                     id="ingredient"

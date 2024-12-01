@@ -65,3 +65,27 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Failed to save meal plan" }, { status: 500 });
     }
 }
+
+export async function DELETE(req: NextRequest) {
+    try {
+        await connect();
+
+        const { searchParams } = new URL(req.url);
+        const id = searchParams.get("id");
+
+        if (!id) {
+            return NextResponse.json({ error: "Recipe ID is required" }, { status: 400 });
+        }
+
+        const deletedMealPlan = await MealPlan.findOneAndDelete({ recipeId: id });
+        if (!deletedMealPlan) {
+            return NextResponse.json({ error: "Meal plan not found" }, { status: 404 });
+        }
+
+        return NextResponse.json({ message: "Deleted from your meal plan successfully" }, { status: 200 });
+    } catch (error) {
+        console.error("Error deleting meal plan:", error);
+        return NextResponse.json({ error: "Failed to delete meal plan" }, { status: 500 });
+    }
+}
+
